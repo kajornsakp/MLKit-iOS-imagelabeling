@@ -1,0 +1,6 @@
+framework module Pods_firebasePlayground {
+  umbrella header "Pods-firebasePlayground-umbrella.h"
+
+  export *
+  module * { export * }
+}
