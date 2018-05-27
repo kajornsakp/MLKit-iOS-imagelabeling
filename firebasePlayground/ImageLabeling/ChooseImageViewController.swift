@@ -16,7 +16,7 @@ class ChooseImageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         picker.delegate = self
-        self.title = "ML Kit"
+        self.title = "Image Labeling"
         
     }
 

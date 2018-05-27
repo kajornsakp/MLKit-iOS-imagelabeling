@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		17EC429D61893E6AB6ED3081 /* Pods_firebasePlayground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E9C0322994B4356E4337F30 /* Pods_firebasePlayground.framework */; };
+		4D65466620BA6A0F00E0DC47 /* RealTimeDetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D65466520BA6A0F00E0DC47 /* RealTimeDetectionViewController.swift */; };
 		4DF3285620A687DC00C8E189 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3285520A687DC00C8E189 /* AppDelegate.swift */; };
 		4DF3285820A687DC00C8E189 /* ChooseImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF3285720A687DC00C8E189 /* ChooseImageViewController.swift */; };
 		4DF3285B20A687DC00C8E189 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DF3285920A687DC00C8E189 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 		2554E7945E1B192B25CF59CC /* Pods-firebasePlayground.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firebasePlayground.release.xcconfig"; path = "Pods/Target Support Files/Pods-firebasePlayground/Pods-firebasePlayground.release.xcconfig"; sourceTree = "<group>"; };
 		25E9F4D0F13AF983FD066E78 /* Pods_firebasePlaygroundUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_firebasePlaygroundUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27632D3C774EB77AEE7DF394 /* Pods-firebasePlayground.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firebasePlayground.debug.xcconfig"; path = "Pods/Target Support Files/Pods-firebasePlayground/Pods-firebasePlayground.debug.xcconfig"; sourceTree = "<group>"; };
+		4D65466520BA6A0F00E0DC47 /* RealTimeDetectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealTimeDetectionViewController.swift; sourceTree = "<group>"; };
 		4DF3285220A687DC00C8E189 /* firebasePlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = firebasePlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DF3285520A687DC00C8E189 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DF3285720A687DC00C8E189 /* ChooseImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseImageViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,23 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		4D65466320BA611D00E0DC47 /* ImageLabeling */ = {
+			isa = PBXGroup;
+			children = (
+				4DF3285720A687DC00C8E189 /* ChooseImageViewController.swift */,
+				4DF3288520A6959500C8E189 /* ResultViewController.swift */,
+				4D65466520BA6A0F00E0DC47 /* RealTimeDetectionViewController.swift */,
+			);
+			path = ImageLabeling;
+			sourceTree = "<group>";
+		};
+		4D65466420BA62B500E0DC47 /* BarcodeScanning */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BarcodeScanning;
+			sourceTree = "<group>";
+		};
 		4DF3284920A687DC00C8E189 = {
 			isa = PBXGroup;
 			children = (
@@ -131,14 +150,14 @@
 		4DF3285420A687DC00C8E189 /* firebasePlayground */ = {
 			isa = PBXGroup;
 			children = (
+				4D65466420BA62B500E0DC47 /* BarcodeScanning */,
+				4D65466320BA611D00E0DC47 /* ImageLabeling */,
 				4DF3285520A687DC00C8E189 /* AppDelegate.swift */,
-				4DF3285720A687DC00C8E189 /* ChooseImageViewController.swift */,
 				4DF3285920A687DC00C8E189 /* Main.storyboard */,
 				4DF3285C20A687DE00C8E189 /* Assets.xcassets */,
 				4DF3285E20A687DE00C8E189 /* LaunchScreen.storyboard */,
 				4DF3288320A687FC00C8E189 /* GoogleService-Info.plist */,
 				4DF3286120A687DE00C8E189 /* Info.plist */,
-				4DF3288520A6959500C8E189 /* ResultViewController.swift */,
 			);
 			path = firebasePlayground;
 			sourceTree = "<group>";
@@ -391,6 +410,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DF3285820A687DC00C8E189 /* ChooseImageViewController.swift in Sources */,
+				4D65466620BA6A0F00E0DC47 /* RealTimeDetectionViewController.swift in Sources */,
 				4DF3285620A687DC00C8E189 /* AppDelegate.swift in Sources */,
 				4DF3288620A6959500C8E189 /* ResultViewController.swift in Sources */,
 			);
