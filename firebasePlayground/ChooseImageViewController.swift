@@ -32,7 +32,7 @@ class ChooseImageViewController: UIViewController {
     
 }
 
-// MARK: ML Kit detect
+// MARK: ML Kit label detect
 extension ChooseImageViewController{
     func labelImage(image : UIImage){
         let labelDetector = vision.labelDetector()
@@ -43,14 +43,14 @@ extension ChooseImageViewController{
                 return
             }
             let result = labels.map({
-                return "\($0.label) : \($0.confidence) \n"
-            })
-            self.showResultScreen(image: image, resultString: result.joined())
+                return "\($0.label) : \($0.confidence)"
+            }).joined(separator: "\n")
+            self.showResultScreen(image: image, resultString: result)
         }
     }
 }
 
-//MARK: UIPickerController's delegate
+//MARK: UIImagePickerController's delegate
 extension ChooseImageViewController : UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info["UIImagePickerControllerOriginalImage"] as? UIImage {
