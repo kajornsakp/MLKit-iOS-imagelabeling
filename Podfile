@@ -6,8 +6,10 @@ target 'firebasePlayground' do
   use_frameworks!
   pod 'Firebase/Core'
   pod 'Firebase/MLVision'
+  #image labeling
   pod 'Firebase/MLVisionLabelModel'
-  
+  #barcode scanning
+  pod 'Firebase/MLVisionBarcodeModel'
   # Pods for firebasePlayground
 
   target 'firebasePlaygroundTests' do
