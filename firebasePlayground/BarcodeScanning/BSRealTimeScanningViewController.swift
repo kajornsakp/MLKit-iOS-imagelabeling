@@ -58,30 +58,42 @@ class BSRealTimeScanningViewController: UIViewController {
         session.stopRunning()
         session = AVCaptureSession()
     }
+    func showBarcodeResult(_ result : String){
+        isDetecting = true
+        let alert = UIAlertController(title: "Result", message: result, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .default){ _ in
+            self.isDetecting = false
+            alert.dismiss(animated: true, completion: nil)
+        })
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 
 extension BSRealTimeScanningViewController : AVCaptureVideoDataOutputSampleBufferDelegate{
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         if(!isDetecting){
             isDetecting = true
-            let labelDetector = vision.labelDetector()
+            let barcodeFormat = VisionBarcodeFormat.all
+            let options = VisionBarcodeDetectorOptions(formats: barcodeFormat)
+            let barcodeDetector = vision.barcodeDetector(options: options)
             let visionImage = VisionImage(buffer: sampleBuffer)
             let metadata = VisionImageMetadata()
             metadata.orientation = .rightTop
             visionImage.metadata = metadata
-            labelDetector.detect(in: visionImage){ (labels, error) in
-                guard error == nil , let labels = labels, !labels.isEmpty else {
+            barcodeDetector.detect(in: visionImage){ (barcodes, error) in
+                guard error == nil , let barcodes = barcodes, !barcodes.isEmpty else {
                     self.resultLabel.textColor = UIColor.red
                     self.resultLabel.text = error?.localizedDescription
                     self.isDetecting = false
                     return
                 }
                 self.resultLabel.textColor = UIColor.white
-                let result = labels.map({
-                    return "\($0.label) : \($0.confidence)"
+                let result = barcodes.map({
+                    return $0.rawValue ?? ""
                 }).joined(separator: "\n")
                 self.resultLabel.text = result
                 self.isDetecting = false
+                self.showBarcodeResult(result)
             }
         }
     }
