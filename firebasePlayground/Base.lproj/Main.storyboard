@@ -89,7 +89,7 @@
                                     <action selector="didTapLibraryButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uUL-Ub-CeF"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ml-kit-logo" translatesAutoresizingMaskIntoConstraints="NO" id="Xh9-0c-D8p">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_classification" translatesAutoresizingMaskIntoConstraints="NO" id="Xh9-0c-D8p">
                                 <rect key="frame" x="32" y="128" width="311" height="411"/>
                             </imageView>
                         </subviews>
@@ -154,6 +154,53 @@
             </objects>
             <point key="canvasLocation" x="2759.1999999999998" y="99.400299850074973"/>
         </scene>
+        <!--Choose Image View Controller-->
+        <scene sceneID="aMW-q2-x0B">
+            <objects>
+                <viewController id="peg-8U-oYG" customClass="BSChooseImageViewController" customModule="firebasePlayground" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NnN-Oc-PeK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y5A-ja-bfl">
+                                <rect key="frame" x="160" y="555" width="54" height="30"/>
+                                <state key="normal" title="Camera"/>
+                                <connections>
+                                    <action selector="didTapCameraButton:" destination="peg-8U-oYG" eventType="touchUpInside" id="wak-Z4-JUO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YKA-VI-j6O">
+                                <rect key="frame" x="163" y="617" width="48" height="30"/>
+                                <state key="normal" title="Library"/>
+                                <connections>
+                                    <action selector="didTapLibraryButton:" destination="peg-8U-oYG" eventType="touchUpInside" id="ng8-xZ-gKE"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="barcode_scanning" translatesAutoresizingMaskIntoConstraints="NO" id="nWj-JN-033">
+                                <rect key="frame" x="32" y="96" width="311" height="297"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nWj-JN-033" firstAttribute="top" secondItem="Ker-WP-V8K" secondAttribute="top" constant="32" id="1K5-zk-rSi"/>
+                            <constraint firstItem="YKA-VI-j6O" firstAttribute="top" secondItem="Y5A-ja-bfl" secondAttribute="bottom" constant="32" id="C8U-8x-mev"/>
+                            <constraint firstItem="nWj-JN-033" firstAttribute="centerY" secondItem="NnN-Oc-PeK" secondAttribute="centerY" constant="-89" id="Rhb-BX-G4A"/>
+                            <constraint firstItem="Ker-WP-V8K" firstAttribute="bottom" secondItem="YKA-VI-j6O" secondAttribute="bottom" constant="20" id="SbP-x8-4Ow"/>
+                            <constraint firstItem="nWj-JN-033" firstAttribute="leading" secondItem="Ker-WP-V8K" secondAttribute="leading" constant="32" id="Zvf-Yc-wMo"/>
+                            <constraint firstItem="Ker-WP-V8K" firstAttribute="trailing" secondItem="nWj-JN-033" secondAttribute="trailing" constant="32" id="rN3-Cf-JUh"/>
+                            <constraint firstItem="YKA-VI-j6O" firstAttribute="centerX" secondItem="Ker-WP-V8K" secondAttribute="centerX" id="sg3-zM-zxU"/>
+                            <constraint firstItem="Y5A-ja-bfl" firstAttribute="centerX" secondItem="Ker-WP-V8K" secondAttribute="centerX" id="uRt-XK-Wzs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ker-WP-V8K"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="nWj-JN-033" id="Hs9-md-9vc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VbB-N0-YjV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2084" y="815.44227886056979"/>
+        </scene>
         <!--Table View Controller-->
         <scene sceneID="HGu-Va-d7x">
             <objects>
@@ -173,7 +220,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image Labeling" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r6D-SW-BvP">
-                                                    <rect key="frame" x="8" y="8" width="359" height="27.5"/>
+                                                    <rect key="frame" x="8" y="8" width="359" height="33.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -223,7 +270,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Barcode Scanning" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dw6-HY-B51">
-                                                    <rect key="frame" x="8" y="8" width="359" height="27.5"/>
+                                                    <rect key="frame" x="8" y="8" width="359" height="33.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -236,6 +283,9 @@
                                                 <constraint firstItem="Dw6-HY-B51" firstAttribute="top" secondItem="NTE-Bl-PLX" secondAttribute="top" constant="8" id="w7V-jR-3dY"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="peg-8U-oYG" kind="show" id="p11-hP-AbF"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="nJT-EZ-Ht9">
                                         <rect key="frame" x="0.0" y="178" width="375" height="50"/>
@@ -245,7 +295,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Face recognition" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BAB-zP-24C">
-                                                    <rect key="frame" x="8" y="8" width="359" height="27.5"/>
+                                                    <rect key="frame" x="8" y="8" width="359" height="33.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -267,7 +317,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text recognition" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="INX-uC-CCA">
-                                                    <rect key="frame" x="8" y="8" width="359" height="27.5"/>
+                                                    <rect key="frame" x="8" y="8" width="359" height="33.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -315,6 +365,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ml-kit-logo" width="1600" height="468"/>
+        <image name="barcode_scanning" width="296" height="124"/>
+        <image name="image_classification" width="296" height="124"/>
     </resources>
 </document>
